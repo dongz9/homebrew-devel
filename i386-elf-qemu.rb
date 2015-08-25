@@ -1,4 +1,4 @@
-class I386JosElfQemu < Formula
+class I386ElfQemu < Formula
 
   desc "x86 Emulator"
   homepage "http://wiki.qemu.org"

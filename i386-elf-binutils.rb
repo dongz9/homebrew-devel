@@ -1,4 +1,4 @@
-class I386JosElfBinutils < Formula
+class I386ElfBinutils < Formula
 
   desc "FSF Binutils for i386-elf development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
@@ -11,7 +11,7 @@ class I386JosElfBinutils < Formula
       "--prefix=#{prefix}",
       "--disable-werror",
       "--disable-nls",
-      "--target=i386-jos-elf"
+      "--target=i386-elf"
     ]
 
     system "./configure", *args

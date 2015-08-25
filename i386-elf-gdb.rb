@@ -1,4 +1,4 @@
-class I386JosElfGdb < Formula
+class I386ElfGdb < Formula
 
   homepage "https://www.gnu.org/software/gdb/"
   url "http://ftpmirror.gnu.org/gdb/gdb-7.9.1.tar.xz"
@@ -9,7 +9,7 @@ class I386JosElfGdb < Formula
     args = [
       "--prefix=#{prefix}",
       "--disable-werror",
-      "--target=i386-jos-elf",
+      "--target=i386-elf",
     ]
 
     system "./configure", *args

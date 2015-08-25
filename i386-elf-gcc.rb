@@ -1,4 +1,4 @@
-class I386JosElfGcc < Formula
+class I386ElfGcc < Formula
 
   desc "GNU compiler collection for i386-elf development"
   homepage "https://gcc.gnu.org"
@@ -9,12 +9,12 @@ class I386JosElfGcc < Formula
   depends_on "gmp"
   depends_on "libmpc"
   depends_on "mpfr"
-  depends_on "i386-jos-elf-binutils"
+  depends_on "i386-elf-binutils"
 
   def install
     languages = %w[c]
 
-    binutils = Formula.factory "i386-jos-elf-binutils"
+    binutils = Formula.factory "i386-elf-binutils"
 
     args = [
       "--prefix=#{prefix}",
@@ -24,11 +24,11 @@ class I386JosElfGcc < Formula
       "--disable-libssp",
       "--disable-libmudflap",
       "--disable-multilib",
-      "--with-as=#{binutils.bin}/i386-jos-elf-as",
-      "--with-ld=#{binutils.bin}/i386-jos-elf-ld",
+      "--with-as=#{binutils.bin}/i386-elf-as",
+      "--with-ld=#{binutils.bin}/i386-elf-ld",
       "--with-newlib",
       "--without-headers",
-      "--target=i386-jos-elf"
+      "--target=i386-elf"
     ]
 
     mkdir "build" do
