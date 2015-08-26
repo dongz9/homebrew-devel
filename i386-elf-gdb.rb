@@ -8,7 +8,7 @@ class I386ElfGdb < Formula
   def install
     args = [
       "--prefix=#{prefix}",
-      "--datadir=#{share}/i386-elf-gdb",
+      "--with-gdb-datadir=#{pkgshare}",
       "--disable-werror",
       "--target=i386-elf",
     ]
