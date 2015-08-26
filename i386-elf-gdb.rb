@@ -8,14 +8,16 @@ class I386ElfGdb < Formula
   def install
     args = [
       "--prefix=#{prefix}",
+      "--datadir=#{share}/i386-elf-gdb",
       "--disable-werror",
-      "--program-prefix=i386-elf",
       "--target=i386-elf",
     ]
 
-    system "./configure", *args
-    system "make"
-    system "make", "install"
+    mkdir "build" do
+      system "../configure", *args
+      system "make"
+      system "make", "install"
+    end
 
     rm_rf include
     rm_rf lib

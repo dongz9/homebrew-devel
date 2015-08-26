@@ -39,6 +39,17 @@ class I386ElfGcc < Formula
       system "make", "install-target-libgcc"
     end
 
+    # Rename man7
+    Dir.glob(man7/"*.5") { |file| add_prefix file, i386-elf }
+
     info.rmtree
   end
+
+  def add_prefix(file, prefix)
+    dir = File.dirname(file)
+    ext = File.extname(file)
+    base = File.basename(file, ext)
+    File.rename file, "#{dir}/#{prefix}-#{base}#{ext}"
+  end
+
 end
