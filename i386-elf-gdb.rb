@@ -9,6 +9,7 @@ class I386ElfGdb < Formula
     args = [
       "--prefix=#{prefix}",
       "--disable-werror",
+      "--program-prefix=i386-elf",
       "--target=i386-elf",
     ]
 
