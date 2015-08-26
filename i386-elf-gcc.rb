@@ -40,7 +40,7 @@ class I386ElfGcc < Formula
     end
 
     # Rename man7
-    Dir.glob(man7/"*.5") { |file| add_prefix file, i386-elf }
+    Dir.glob(man7/"*.7") { |file| add_prefix file, i386-elf }
 
     info.rmtree
   end
